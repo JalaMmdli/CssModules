@@ -1,0 +1,16 @@
+.menu{
+  width: 80%;
+  margin: 25px auto;
+  display: flex;
+  justify-content: space-evenly;
+  font-weight: 600;
+  font-size: 24px;
+}
+a{
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
+}
+.active{
+  color: orangered;
+}
