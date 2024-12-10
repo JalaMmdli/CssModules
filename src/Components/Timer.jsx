@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 const Timer = () => {
     const [vaxt, setVaxt] = useState(10); 
     const [isRunning, setIsRunning] = useState(false);
+    const [initialVaxt, setInitialVaxt] = useState(10);
 
     useEffect(() => {
         let interval = null;
@@ -24,9 +25,28 @@ const Timer = () => {
         setIsRunning((prev) => !prev);
     };
 
+    const handleReset = () => {
+        setVaxt(initialVaxt); 
+        setIsRunning(false);
+    };
+
     return (
         <div style={{ textAlign: "center", marginTop: "20px" }}>
             <h1>Taymer: {vaxt}s</h1>
+            <input
+                    type="number"
+                    value={initialVaxt}
+                    onChange={(e) => setInitialVaxt(Number(e.target.value))}
+                    disabled={isRunning}
+                    style={{
+                        padding: "10px",
+                        fontSize: "16px",
+                        width: "100px",
+                        marginRight: "10px",
+                        borderRadius: "5px",
+                        border: "1px solid #ccc",
+                    }}
+                />
             <button
                 onClick={taymerBaslaPauza}
                 style={{
@@ -40,6 +60,20 @@ const Timer = () => {
                 }}
             >
                 {isRunning ? "Pauza" : "Başla"}
+            </button>
+            <button
+                onClick={handleReset}
+                style={{
+                    padding: "10px 20px",
+                    fontSize: "16px",
+                    backgroundColor: "#ff9933",
+                    color: "#fff",
+                    border: "none",
+                    borderRadius: "5px",
+                    cursor: "pointer",
+                }}
+            >
+                Yenidən başla
             </button>
         </div>
     );
