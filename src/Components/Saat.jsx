@@ -18,7 +18,7 @@ const Saat = () => {
     };
 
     useEffect(() => {
-        const interval = setInterval(saatYenile, 1000);
+        const interval = setInterval(saatYenile);
         return () => clearInterval(interval); 
     }, []);
 

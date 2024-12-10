@@ -33,6 +33,22 @@ const Timer = () => {
     return (
         <div style={{ textAlign: "center", marginTop: "20px" }}>
             <h1>Taymer: {vaxt}s</h1>
+            <button
+                onClick={taymerBaslaPauza}
+                style={{
+                    padding: "10px 20px",
+                    fontSize: "16px",
+                    backgroundColor: isRunning ? "#cc3333" : "#33cc33",
+                    color: "#fff",
+                    border: "none",
+                    borderRadius: "5px",
+                    cursor: "pointer",
+                    marginBottom:"20px"
+                }}
+            >
+                {isRunning ? "Pauza" : "Başla"}
+            </button>
+            <br />
             <input
                     type="number"
                     value={initialVaxt}
@@ -47,20 +63,7 @@ const Timer = () => {
                         border: "1px solid #ccc",
                     }}
                 />
-            <button
-                onClick={taymerBaslaPauza}
-                style={{
-                    padding: "10px 20px",
-                    fontSize: "16px",
-                    backgroundColor: isRunning ? "#cc3333" : "#33cc33",
-                    color: "#fff",
-                    border: "none",
-                    borderRadius: "5px",
-                    cursor: "pointer",
-                }}
-            >
-                {isRunning ? "Pauza" : "Başla"}
-            </button>
+      
             <button
                 onClick={handleReset}
                 style={{
